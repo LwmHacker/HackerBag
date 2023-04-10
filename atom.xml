@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hacker明</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2023-04-10T08:54:02.707Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Li Weiming</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>李海媖大番薯</title>
+    <link href="http://example.com/2023/04/10/hello-world/"/>
+    <id>http://example.com/2023/04/10/hello-world/</id>
+    <published>2023-04-10T02:34:11.027Z</published>
+    <updated>2023-04-10T08:54:02.707Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+</feed>
