@@ -1,6 +1,6 @@
 #web_bg {
   /* 背景图像的地址（url括号里）  */
-  background: url();
+  background: url(https://www.bing.com/ck/a?!&&p=02e5e59e2e65baf4JmltdHM9MTY4MTA4NDgwMCZpZ3VpZD0yODM4MDMxMS1lMGQ1LTZlODItMWZkOS0xMWZlZTFiMzZmMTgmaW5zaWQ9NTUwMg&ptn=3&hsh=3&fclid=28380311-e0d5-6e82-1fd9-11fee1b36f18&u=a1L2ltYWdlcy9zZWFyY2g_cT0lRTUlOUIlQkUlRTclODklODcmRk9STT1JUUZSQkEmaWQ9MjE2NzlDQkIwRTk2NDhFMDA2MDNFMzVDQjYxNzQyOEY3RjZGQjQ4Qg&ntb=1);
   /* 背景图像不重复 */
   background-repeat: no-repeat;
   /* 背景图像大小 */
