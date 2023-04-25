@@ -1,0 +1,20 @@
+
+/* 文章页背景 */
+.layout_post>#post {
+    /* 以下代表透明度为0.5 可以自行修改*/
+    background: rgba(255,255,255,.5);
+}
+​
+/* 所有页面背景 */
+#aside_content .card-widget, #recent-posts>.recent-post-item, .layout_page>div:first-child:not(.recent-posts), .layout_post>#page, .layout_post>#post, .read-mode .layout_post>#post{
+    /* 以下代表透明度为0.5 */
+    background: rgba(255,255,255,.5);
+}
+#web_bg {
+  /* 背景图像的地址（url括号里）  */
+  background: url(https://ts1.cn.mm.bing.net/th/id/R-C.ba7def62f141ffb81f28253acfccdf3e?rik=vG%2bPlOiJCF%2fdag&riu=http%3a%2f%2fimg95.699pic.com%2fphoto%2f50101%2f3773.jpg_wh300.jpg&ehk=OpXjW1s1JhxAUEogKlxuD7gf1T2Zuhxa7SG34sFvjE8%3d&risl=&pid=ImgRaw&r=0);
+  /* 背景图像不重复 */
+  background-repeat: no-repeat;
+  /* 背景图像大小 */
+  background-size: cover;
+}
