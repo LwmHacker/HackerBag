@@ -1,4 +1,4 @@
-http://example.com/2023/04/10/hello-world/
+http://example.com/2023/04/10/sql%E6%B3%A8%E5%85%A5/
 http://example.com/resources/index.html
 http://example.com/about/index.html
 http://example.com/tags/index.html
