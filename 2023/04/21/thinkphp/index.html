@@ -1,0 +1,404 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>tp框架 | Hacker明</title><meta name="author" content="Li Weiming"><meta name="copyright" content="Li Weiming"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="ThinkPHP框架 一、框架概述 1、什么是框架框架就是一些代码类、方法（函数）、变量、常量的集合，这些代码是功能结构性的代码（并非业务代码）。业务代码其实就是具体的一些模块的增删改查逻辑代码。 使用框架开发项目，有便于代码重用、开发效率高、代码规范好、便于功能扩展等优点。 2、php中的主流框架①Zend Framework 框架，PHP官方框架。 ②YII框架，又叫易框架。 ③Symfony">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tp框架">
+<meta property="og:url" content="http://example.com/2023/04/21/thinkphp/index.html">
+<meta property="og:site_name" content="Hacker明">
+<meta property="og:description" content="ThinkPHP框架 一、框架概述 1、什么是框架框架就是一些代码类、方法（函数）、变量、常量的集合，这些代码是功能结构性的代码（并非业务代码）。业务代码其实就是具体的一些模块的增删改查逻辑代码。 使用框架开发项目，有便于代码重用、开发效率高、代码规范好、便于功能扩展等优点。 2、php中的主流框架①Zend Framework 框架，PHP官方框架。 ②YII框架，又叫易框架。 ③Symfony">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tse4-mm.cn.bing.net/th/id/OIP-C.tSd6WFEbOiFqaU3U51OjugAAAA?w=207&h=207&c=7&r=0&o=5&dpr=1.1&pid=1.7">
+<meta property="article:published_time" content="2023-04-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-03T07:45:58.406Z">
+<meta property="article:author" content="Li Weiming">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tse4-mm.cn.bing.net/th/id/OIP-C.tSd6WFEbOiFqaU3U51OjugAAAA?w=207&h=207&c=7&r=0&o=5&dpr=1.1&pid=1.7"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/2023/04/21/thinkphp/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'tp框架',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-03 15:45:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/source/css/car.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hacker明" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.tSd6WFEbOiFqaU3U51OjugAAAA?w=207&amp;h=207&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.1&amp;pid=1.7" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Hacker明"><span class="site-name">Hacker明</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">tp框架</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-20T16:00:00.000Z" title="发表于 2023-04-21 00:00:00">2023-04-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-03T07:45:58.406Z" title="更新于 2023-05-03 15:45:58">2023-05-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="tp框架"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>ThinkPHP框架</p>
+<p>一、框架概述</p>
+<h2 id="1、什么是框架"><a href="#1、什么是框架" class="headerlink" title="1、什么是框架"></a>1、什么是框架</h2><p>框架就是一些代码类、方法（函数）、变量、常量的集合，这些代码是功能结构性的代码（并非业务代码）。业务代码其实就是具体的一些模块的增删改查逻辑代码。</p>
+<p>使用框架开发项目，有便于代码重用、开发效率高、代码规范好、便于功能扩展等优点。</p>
+<h2 id="2、php中的主流框架"><a href="#2、php中的主流框架" class="headerlink" title="2、php中的主流框架"></a>2、php中的主流框架</h2><p>①Zend Framework 框架，PHP官方框架。</p>
+<p>②YII框架，又叫易框架。</p>
+<p>③Symfony 框架。</p>
+<p>④Laravel框架，市场使用较多。</p>
+<p>⑤Codelgniter框架，简称CI框架。</p>
+<p>⑥ThinkPHP框架，简称TP框架，常用版本：3.2.3和 5.0.*版本。</p>
+<p>ThinkPHP是国人自己开发的框架。有中文官网、中文帮助文档、中文社区，以及丰富的百度搜索资源。所以ThinkPHP很适合作为入门级的开发框架。</p>
+<p>这些框架大多都基于MVC设计思想和面向对象的。</p>
+<p><strong>mvc：</strong></p>
+<p>M:模型model，处理业务数据，与数据库做交互。</p>
+<p>V:视图view，显示html页面，用户能够看到并与之交互的页面。</p>
+<p>C：控制器controller，接收请求，调用模型处理数据，调用视图显示页面。</p>
+<p>整个网站应用，分为模型、视图、控制器三大部分组成。</p>
+<h1 id="二、ThinkPHP框架安装"><a href="#二、ThinkPHP框架安装" class="headerlink" title="二、ThinkPHP框架安装"></a>二、ThinkPHP框架安装</h1><h2 id="1、下载并解压框架"><a href="#1、下载并解压框架" class="headerlink" title="1、下载并解压框架"></a><strong>1、下载并解压框架</strong></h2><p>下载地址：<a target="_blank" rel="noopener" href="http://www.thinkphp.cn/down.html">http://www.thinkphp.cn</a></p>
+<p>下载后解压到工作目录</p>
+<h2 id="2、配置虚拟主机"><a href="#2、配置虚拟主机" class="headerlink" title="2、配置虚拟主机"></a>2、配置虚拟主机</h2><p>①通过phpStudy的“站点域名管理”进行配置或者直接修改apache的虚拟主机配置文件，</p>
+<p>将站点域名指向项目目录下的public目录</p>
+<p>②域名解析，修改hosts文件</p>
+<p>增加域名如下： 多个域名可以写在同一行，以空格隔开</p>
+<p>127.0.0.1       tpshop.com <a target="_blank" rel="noopener" href="http://www.tpshop.com/">www.tpshop.com</a></p>
+<p>③重启apache，在浏览器访问配置的虚拟站点<a target="_blank" rel="noopener" href="http://www.tpshop.com/">http://www.tpshop.com</a></p>
+<p>看到以上界面，说明框架安装成功。</p>
+<p>apache配置参考（不要照搬）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    DocumentRoot &quot;E:\phpStudy\WWW\tpshop\public&quot;</span><br><span class="line">    ServerName www.tpshop.com</span><br><span class="line">    ServerAlias tpshop.com</span><br><span class="line">  	&lt;Directory &quot;E:\phpStudy\WWW\tpshop\public&quot;&gt;</span><br><span class="line">      	Options FollowSymLinks ExecCGI</span><br><span class="line">        AllowOverride All</span><br><span class="line">        Order allow,deny</span><br><span class="line">        Allow from all</span><br><span class="line">        Require all granted</span><br><span class="line">  	&lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三、TP框架基础"><a href="#三、TP框架基础" class="headerlink" title="三、TP框架基础"></a>三、TP框架基础</h1><h2 id="1、目录结构（重点）"><a href="#1、目录结构（重点）" class="headerlink" title="1、目录结构（重点）"></a>1、目录结构（重点）</h2><p>（见手册–基础–目录结构）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"> 1.project  应用部署目录</span><br><span class="line"> 2.├─application           应用目录（可设置）</span><br><span class="line"> 3.│  ├─common             公共模块目录（可更改）</span><br><span class="line"> 4.│  ├─index              模块目录(可更改)</span><br><span class="line"> 5.│  │  ├─config.php      模块配置文件</span><br><span class="line"> 6.│  │  ├─common.php      模块函数文件</span><br><span class="line"> 7.│  │  ├─controller      控制器目录</span><br><span class="line"> 8.│  │  ├─model           模型目录</span><br><span class="line"> 9.│  │  ├─view            视图目录</span><br><span class="line">10.│  │  └─ ...            更多类库目录</span><br><span class="line">11.│  ├─command.php        命令行工具配置文件</span><br><span class="line">12.│  ├─common.php         应用公共（函数）文件</span><br><span class="line">13.│  ├─config.php         应用（公共）配置文件</span><br><span class="line">14.│  ├─database.php       数据库配置文件</span><br><span class="line">15.│  ├─tags.php           应用行为扩展定义文件</span><br><span class="line">16.│  └─route.php          路由配置文件</span><br><span class="line">17.├─extend                扩展类库目录（可定义）</span><br><span class="line">18.├─public                WEB 部署目录（对外访问目录）</span><br><span class="line">19.│  ├─static             静态资源存放目录(css,js,image)</span><br><span class="line">20.│  ├─index.php          应用入口文件</span><br><span class="line">21.│  ├─router.php         快速测试文件</span><br><span class="line">22.│  └─.htaccess          用于 apache 的重写</span><br><span class="line">23.├─runtime               应用的运行时目录（可写，可设置）</span><br><span class="line">24.├─vendor                第三方类库目录（Composer）</span><br><span class="line">25.├─thinkphp              框架系统目录</span><br><span class="line">26.│  ├─lang               语言包目录</span><br><span class="line">27.│  ├─library            框架核心类库目录</span><br><span class="line">28.│  │  ├─think           Think 类库包目录</span><br><span class="line">29.│  │  └─traits          系统 Traits 目录</span><br><span class="line">30.│  ├─tpl                系统模板目录</span><br><span class="line">31.│  ├─.htaccess          用于 apache 的重写</span><br><span class="line">32.│  ├─.travis.yml        CI 定义文件</span><br><span class="line">33.│  ├─base.php           基础定义文件</span><br><span class="line">34.│  ├─composer.json      composer 定义文件</span><br><span class="line">35.│  ├─console.php        控制台入口文件</span><br><span class="line">36.│  ├─convention.php     惯例配置文件</span><br><span class="line">37.│  ├─helper.php         助手函数文件（可选）</span><br><span class="line">38.│  ├─LICENSE.txt        授权说明文件</span><br><span class="line">39.│  ├─phpunit.xml        单元测试配置文件</span><br><span class="line">40.│  ├─README.md          README 文件</span><br><span class="line">41.│  └─start.php          框架引导文件</span><br><span class="line">42.├─build.php             自动生成定义文件（参考）</span><br><span class="line">43.├─composer.json         composer 定义文件</span><br><span class="line">44.├─LICENSE.txt           授权说明文件</span><br><span class="line">45.├─README.md             README 文件</span><br><span class="line">46.├─think                 命令行入口文件</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2、配置文件（重点）"><a href="#2、配置文件（重点）" class="headerlink" title="2、配置文件（重点）"></a>2、配置文件（重点）</h2><p>（见手册–配置）</p>
+<p>①三个层级的配置文件：</p>
+<p>框架主配置文件（惯例配置文件） thinkphp&#x2F;convention.php </p>
+<p>应用公共配置文件 application&#x2F;config.php， application&#x2F;database.php 对整个应用生效</p>
+<p>模块配置文件 application&#x2F;模块目录&#x2F;config.php 对当前模块生效</p>
+<p> ②其他说明：</p>
+<p>配置文件格式 return array( 键值对 );</p>
+<p>加载顺序： 框架主配置文件 》 应用公共配置文件 》 模块配置文件</p>
+<p>配置文件生效顺序： 后加载的生效（后加载的配置项会覆盖之前配置项）</p>
+<p>如果要手动进行配置，一般不要修改框架本身的主配置文件，</p>
+<p>而是在应用或者模块配置文件中进行配置。</p>
+<h2 id="3、函数文件"><a href="#3、函数文件" class="headerlink" title="3、函数文件"></a>3、函数文件</h2><p>框架助手函数文件 thinkphp&#x2F;helper.php</p>
+<p>应用公共函数文件 application&#x2F;common.php</p>
+<p>模块函数文件 application&#x2F;模块目录&#x2F;common.php</p>
+<p>一般不建议直接修改thinkphp&#x2F;helper.php</p>
+<h2 id="4、开发规范（了解）"><a href="#4、开发规范（了解）" class="headerlink" title="4、开发规范（了解）"></a>4、开发规范（了解）</h2><p>TP框架编码规范：见手册–基础–开发规范</p>
+<p>扩展：PSR代码规范：<a target="_blank" rel="noopener" href="https://www.kancloud.cn/thinkphp/php-fig-psr/3139">https://www.kancloud.cn/thinkphp/php-fig-psr/3139</a></p>
+<h1 id="四、TP框架中的控制器"><a href="#四、TP框架中的控制器" class="headerlink" title="四、TP框架中的控制器"></a>四、TP框架中的控制器</h1><h2 id="1、控制器的后缀"><a href="#1、控制器的后缀" class="headerlink" title="1、控制器的后缀"></a>1、控制器的后缀</h2><p>打开配置文件application&#x2F;config.php，有如下配置</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;controller_suffix&#x27;</span> =&gt; <span class="literal">false</span>,</span><br></pre></td></tr></table></figure>
+
+<p>表示默认情况下，控制器无特殊后缀。例如 Index控制器，文件名为Index.php</p>
+<p>如果需要进行设置，可以设置为（我们不需要这么设置）</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;controller_suffix&#x27;</span> =&gt; <span class="string">&#x27;Controller&#x27;</span>,</span><br></pre></td></tr></table></figure>
+
+<p>表示控制器以Controller为后缀。例如Index控制器，文件名为IndexController.php</p>
+<h2 id="2、控制器的定义"><a href="#2、控制器的定义" class="headerlink" title="2、控制器的定义"></a>2、控制器的定义</h2><p>（见手册–控制器–控制器定义）</p>
+<p>1）定义位置及命名规则</p>
+<p>定义位置：application&#x2F;模块目录&#x2F;controller&#x2F;目录下</p>
+<p>命名规则：控制器名称（首字母大写） + (控制器后缀，默认没有) + .php</p>
+<p>默认：Index控制器  Index.php</p>
+<p>  User控制器   User.php</p>
+<p>  Test控制器    Test.php</p>
+<p>示例：</p>
+<p>2）编写控制器</p>
+<p>①声明命名空间  namespace  app\模块目录名\controller</p>
+<p>②引入控制器基类（可选） use think\Controller; think是命名空间 Controller是基类控制器</p>
+<p>③定义当前控制器类，继承控制器基类（可选）</p>
+<p>示例：定义测试控制器Test.php</p>
+<h2 id="3、框架中的命名空间"><a href="#3、框架中的命名空间" class="headerlink" title="3、框架中的命名空间"></a>3、框架中的命名空间</h2><p>命名空间本身是PHP就有的，用来防止命名冲突问题的。</p>
+<p>TP框架中的命名空间，通常和目录挂钩。</p>
+<p>原因：TP中的自动加载机制，会将类的命名空间作为加载路径的一部分。 </p>
+<p>TP中命名空间使用：</p>
+<p>①声明命名空间 使用namespace关键字</p>
+<p>②引入指定的类 使用use关键字  命名空间\类名称</p>
+<p>③完全限定式访问  在使用类时，\完整命名空间\类名称（继承和实例化）</p>
+<p>如果一个类没有命名空间，使用 \类名</p>
+<h2 id="4、url访问"><a href="#4、url访问" class="headerlink" title="4、url访问"></a>4、url访问</h2><p>（见手册–架构–URL访问）</p>
+<p>ThinkPHP5.0框架中，默认使用PATH_INFO方式的url进行访问。</p>
+<p>示例：<a target="_blank" rel="noopener" href="http://www.tpshop.com/index.php/Home/Test/index/page/10">http://www.tpshop.com/index.php/Index/Test/index/page/10</a></p>
+<p>格式：<a target="_blank" rel="noopener" href="http://域名/%E5%85%A5%E5%8F%A3%E6%96%87%E4%BB%B6?m=%E5%88%86%E7%BB%84%E5%90%8D&c=%E6%8E%A7%E5%88%B6%E5%99%A8%E5%90%8D%E7%A7%B0&a=%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95%E5%90%8D%E7%A7%B0&%E5%8F%82%E6%95%B0%E5%90%8D=%E5%8F%82%E6%95%B0%E5%80%BC">http:&#x2F;&#x2F;域名&#x2F;入口文件&#x2F;模块名&#x2F;控制器名称&#x2F;操作方法名称&#x2F;参数名&#x2F;参数值</a></p>
+<p>隐藏入口文件写法：<a target="_blank" rel="noopener" href="http://域名/%E5%85%A5%E5%8F%A3%E6%96%87%E4%BB%B6?m=%E5%88%86%E7%BB%84%E5%90%8D&c=%E6%8E%A7%E5%88%B6%E5%99%A8%E5%90%8D%E7%A7%B0&a=%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95%E5%90%8D%E7%A7%B0&%E5%8F%82%E6%95%B0%E5%90%8D=%E5%8F%82%E6%95%B0%E5%80%BC">http:&#x2F;&#x2F;域名&#x2F;模块名&#x2F;控制器名称&#x2F;操作方法名称&#x2F;参数名&#x2F;参数值</a></p>
+<p>需要对apache进行设置（手册–架构–URL访问、手册–部署–URL重写）</p>
+<p>使用PHPStudy需要将 public目录的.htaccess文件中，index.php后面加上? </p>
+<p>使用Apapche的重写机制隐藏入口文件后，如果在整个url后面加上.html后缀, 让整个url看起来像是访问的静态页面。这叫做“伪静态”。</p>
+<h2 id="5、调试模式"><a href="#5、调试模式" class="headerlink" title="5、调试模式"></a>5、调试模式</h2><p>（见手册–错误与调试–调试模式）</p>
+<p>默认情况下，如果代码有误（比如控制器名拼写有误），会出现以下错误：</p>
+<p>错误描述比较模糊，不方便进行错误调试。这种模式通常叫做“部署模式”（生产模式）。</p>
+<p>开发阶段可以将框架设置为调试模式，便于进行错误调试：</p>
+<p>修改 项目目录\application目录\config.php </p>
+<p>开启调试模式后，报错信息格式如下：</p>
+<p>会提示详细错误信息 和 错误位置（参考位置）。</p>
+<p>相对于 线上环境（开发完成后的阶段），叫做 部署模式或者生产模式。</p>
+<h1 id="五、创建模块"><a href="#五、创建模块" class="headerlink" title="五、创建模块"></a>五、创建模块</h1><h2 id="1、创建前台和后台模块"><a href="#1、创建前台和后台模块" class="headerlink" title="1、创建前台和后台模块"></a>1、创建前台和后台模块</h2><p>一个典型的应用是由多个模块组成的（通常有前台网站模块和后台管理系统模块），这些模块通常都是应用目录下面的一个子目录，每个模块都有自己独立的配置文件、公共文件和类库文件。</p>
+<p>我们给项目创建home（前台）和admin（后台）两个模块：</p>
+<h2 id="2、设置默认访问模块"><a href="#2、设置默认访问模块" class="headerlink" title="2、设置默认访问模块"></a>2、设置默认访问模块</h2><p>打开配置文件application&#x2F;config.php，有如下配置</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;default_module&#x27;</span> =&gt; <span class="string">&#x27;index&#x27;</span>,</span><br></pre></td></tr></table></figure>
+
+<p>表示默认访问模块为index模块</p>
+<p>可以更改默认模块为home模块</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;default_module&#x27;</span> =&gt; <span class="string">&#x27;home&#x27;</span>,</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="六、命令行创建模块目录及文件"><a href="#六、命令行创建模块目录及文件" class="headerlink" title="六、命令行创建模块目录及文件"></a>六、命令行创建模块目录及文件</h1><p>在 <strong>项目根目录</strong> 执行命令（think文件所在的目录）</p>
+<h2 id="1、命令行创建模块目录"><a href="#1、命令行创建模块目录" class="headerlink" title="1、命令行创建模块目录"></a>1、命令行创建模块目录</h2><p>（见手册 – 命令行 – 自动生成目录结构）</p>
+<p>通常可以通过以下命令，自动生成模块目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php think build --module 模块名</span><br></pre></td></tr></table></figure>
+
+<p>比如：创建test模块目录，执行命令 php think build –module test即可。（模块名小写）</p>
+<h2 id="2、命令行创建控制器"><a href="#2、命令行创建控制器" class="headerlink" title="2、命令行创建控制器"></a>2、命令行创建控制器</h2><p>（见手册 – 命令行 – 创建类库文件）</p>
+<p>通常可以通过以下命令，自动创建控制器</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">php think make:controller 模块名/控制器名 </span><br><span class="line">php think make:controller 模块名/控制器名 --plain</span><br></pre></td></tr></table></figure>
+
+<p>加上 –plain 参数 表示创建没有方法的空控制器类。否则控制器类中会自带一些方法。</p>
+<p>比如：创建home模块Index控制器，执行命令 php think make:controller home&#x2F;Index即可。</p>
+<p>注意：控制器名首字母大写。</p>
+<h2 id="3、命令行创建模型"><a href="#3、命令行创建模型" class="headerlink" title="3、命令行创建模型"></a>3、命令行创建模型</h2><p>（见手册 – 命令行 – 创建类库文件）</p>
+<p>通常可以通过以下命令，自动创建模型</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php think make:model 模块名/模型名</span><br></pre></td></tr></table></figure>
+
+<p>比如：创建home模块User模型，执行命令 php think make:model home&#x2F;User即可。</p>
+<p>注意：模型名首字母大写。</p>
+<h1 id="七、Request请求类"><a href="#七、Request请求类" class="headerlink" title="七、Request请求类"></a>七、Request请求类</h1><h2 id="1、获取输入变量"><a href="#1、获取输入变量" class="headerlink" title="1、获取输入变量"></a>1、获取输入变量</h2><p>（见手册–请求–输入变量）</p>
+<p>要获取当前的请求信息，可以使用\think\Request类</p>
+<p>$request &#x3D; \think\Request::instance();</p>
+<p>或者使用助手函数</p>
+<p>$request &#x3D; request();</p>
+<p>也可以单独获取get变量或者post变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Request::instance()-&gt;get();</span><br><span class="line">Request::instance()-&gt;post();</span><br><span class="line">input(&#x27;get.&#x27;);</span><br><span class="line">input(&#x27;post.&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>代码示例：</p>
+<p>浏览器访问效果：</p>
+<p>特殊说明：路由变量与get变量</p>
+<p><a target="_blank" rel="noopener" href="http://www.tpshop.com/home/test/index/id/100?page=10">http://www.tpshop.com/home/test/index/id/100?page=10</a></p>
+<p>param方法 能够获取所有参数（id, page）</p>
+<p>get方法 只能获取?后面的请求字符串的参数（page）</p>
+<p>route方法 只能获取到?前面的路由中的参数（id）</p>
+<h2 id="2、参数绑定"><a href="#2、参数绑定" class="headerlink" title="2、参数绑定"></a>2、参数绑定</h2><p>（见手册–请求–参数绑定）</p>
+<p>方法参数绑定是把URL地址（或者路由地址）中的变量作为操作方法的参数直接传入。</p>
+<p>使用示例：home模块Test控制器read方法中，声明$id参数</p>
+<p>访问url中，传递id参数  <a target="_blank" rel="noopener" href="http://www.tpshop.com/home/test/read/id/100">http://www.tpshop.com/home/test/read/id/100</a></p>
+<h2 id="3、依赖注入"><a href="#3、依赖注入" class="headerlink" title="3、依赖注入"></a><strong>3、依赖注入</strong></h2><p>（见手册–请求–依赖注入）</p>
+<p>依赖注入：简单的说，要在一个类A中使用另一个依赖类B时，不直接在类A中实例化类B，而是先实例化类B后再以参数的形式传入类A.</p>
+<p>补充说明：Request请求类中，封装了很多和请求相关的方法，详情见手册–请求（多看）</p>
+<p>小结：</p>
+<p>可以找到任何一种方法 接收请求参数</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.获取请求对象  </span></span><br><span class="line"><span class="variable">$request</span> = <span class="title function_ invoke__">request</span>();</span><br><span class="line"><span class="variable">$request</span> = \think<span class="title class_">\Request</span>::<span class="title function_ invoke__">instance</span>();</span><br><span class="line"><span class="variable">$request</span> = <span class="variable language_">$this</span>-&gt;request; <span class="comment">//仅限于继承了底层控制器的情况下</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">save</span>(<span class="params">Request <span class="variable">$request</span></span>)  //依赖注入</span></span><br><span class="line"><span class="function">   //2. 接收请求参数 <span class="title">param</span>方法</span></span><br><span class="line"><span class="function">    $<span class="title">params</span> = $<span class="title">request</span>-&gt;<span class="title">param</span>(<span class="params"></span>)</span>;</span><br><span class="line">	<span class="variable">$params</span> = <span class="title function_ invoke__">input</span>();</span><br><span class="line">	<span class="variable">$params</span> = <span class="title function_ invoke__">request</span>()-&gt;<span class="title function_ invoke__">param</span>();</span><br><span class="line">	<span class="variable">$id</span> = <span class="variable">$request</span>-&gt;<span class="title function_ invoke__">param</span>(<span class="string">&#x27;id&#x27;</span>);</span><br><span class="line">	<span class="variable">$id</span> = <span class="title function_ invoke__">input</span>(<span class="string">&#x27;id&#x27;</span>);</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">edit</span>(<span class="params"><span class="variable">$id</span></span>)//参数绑定</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="八、ThinkPHP框架中的视图"><a href="#八、ThinkPHP框架中的视图" class="headerlink" title="八、ThinkPHP框架中的视图"></a>八、ThinkPHP框架中的视图</h1><h2 id="1、视图的组成"><a href="#1、视图的组成" class="headerlink" title="1、视图的组成"></a>1、视图的组成</h2><p>View视图类（继承了自定义模板引擎，功能与Smarty类似）</p>
+<p>HTML模板文件</p>
+<h2 id="2、模板的定义"><a href="#2、模板的定义" class="headerlink" title="2、模板的定义"></a>2、模板的定义</h2><p>（见手册–模板–模板定位）</p>
+<p>为了对模板文件更加有效的管理，ThinkPHP对模板文件进行目录划分，默认的模板文件定义规则是：视图目录&#x2F;控制器名（小写）&#x2F;操作名（小写）+模板后缀</p>
+<p>默认的视图目录是模块的view目录，框架的默认视图文件后缀是.html。</p>
+<p>比如home模块 Index控制器index方法要调用的模板定义为view&#x2F;index&#x2F;index.html</p>
+<h2 id="3、模板渲染"><a href="#3、模板渲染" class="headerlink" title="3、模板渲染"></a>3、模板渲染</h2><p>（见手册–视图–模板渲染，手册–视图–模板赋值）</p>
+<p>在控制器方法中，</p>
+<p>第一种：使用assign方法进行模板赋值，使用fetch方法进行模板渲染。</p>
+<p>第二种：使用助手函数view(), 进行模板渲染并赋值。</p>
+<p>使用示例：</p>
+<p>注：模板中输出变量值： {$模板变量名}</p>
+<h1 id="九、将后台模板与框架做结合"><a href="#九、将后台模板与框架做结合" class="headerlink" title="九、将后台模板与框架做结合"></a>九、将后台模板与框架做结合</h1><p>模板整合思路：</p>
+<p>①确定页面的访问路径（模块、控制器、方法）</p>
+<p>②新建对应的控制器方法，在方法中调用模板</p>
+<p>③将模板页面移动到对应的视图目录下（创建子目录）</p>
+<p>④将静态资源文件移动到public&#x2F;static&#x2F;admin目录下</p>
+<p>⑤修改模板文件中静态资源路径</p>
+<p>页面分布：</p>
+<p>登录页  	Login控制器login方法  login.html</p>
+<p>首页		Index控制器index方法  index.html</p>
+<p>商品列表	Goods控制器index方法  goods_list.html  -&gt;  index.html</p>
+<p>商品新增	Goods控制器create方法  goods_add.html  -&gt; create.html</p>
+<p>商品修改	Goods控制器edit方法    goods_edit.html   -&gt; edit.html</p>
+<p>管理员列表	Manager控制器index方法  manager_list.html   -&gt; index.html</p>
+<p>管理员新增	Manager控制器create方法  manager_add.html  -&gt; create.html</p>
+<p>管理员修改	Manager控制器edit方法    manager_edit.html  -&gt;edit.html</p>
+<p>…</p>
+<h2 id="1、模板布局"><a href="#1、模板布局" class="headerlink" title="1、模板布局"></a>1、模板布局</h2><p>（见手册–模板–模板布局）</p>
+<p>使用模板布局，就是把多个模板页面都有的公共代码给抽取出来，放到一个公共位置开发维护</p>
+<p>好处：相同的代码只维护一份，减少代码工作量</p>
+<p>后台全局布局设置步骤：</p>
+<p>①修改配置文件application&#x2F;admin&#x2F;config.php,加入以下设置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x27;template&#x27;  =&gt;  [</span><br><span class="line">    &#x27;layout_on&#x27;     =&gt;  true,//开启布局</span><br><span class="line">    &#x27;layout_name&#x27;   =&gt;  &#x27;layout&#x27;,//布局文件名称</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>②将静态资源文件移动到&#x2F;public&#x2F;static&#x2F;admin目录下</p>
+<p>③在application&#x2F;admin&#x2F;view目录下，新建layout.html</p>
+<p>将后台页面公共的头部、底部代码提取到layout.html中，在中间位置放一个特殊字符串“{_<em>CONTENT</em>_}”，表示此位置，替换为原始要访问的页面内容。</p>
+<p>layout.html文件中， 只保留所有页面<strong>公共</strong> 的css和js相关代码，修改静态资源路径</p>
+<p>注： <strong>一定不能</strong> 直接将所有css和js都放在layout.html中。</p>
+<p>注：TP框架中，模板中的静态资源路径，不能使用相对路径.&#x2F; ，必须使用以&#x2F;开头的路径。</p>
+<p>④临时关闭模板布局</p>
+<p>全局布局设置，对所有页面全部生效。</p>
+<p>特殊页面（不需要使用布局的页面），可以在控制器方法中，临时关闭模板布局。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">$this</span>-&gt;view-&gt;engine-&gt;<span class="title function_ invoke__">layout</span>(<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+
+<p>比如登录页面，不需要使用布局，见 “3、后台登录页”</p>
+<h2 id="2、后台首页"><a href="#2、后台首页" class="headerlink" title="2、后台首页"></a>2、后台首页</h2><p>①确定页面的访问路径（模块、控制器、方法）</p>
+<p>admin模块Index控制器index方法</p>
+<p>②新建对应的控制器方法，在方法中调用模板</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">app</span>\<span class="title class_">admin</span>\<span class="title class_">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="title function_ invoke__">view</span>();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>③将模板页面移动到对应的视图目录下</p>
+<p>index.html    &#x3D;&gt;     application&#x2F;admin&#x2F;view&#x2F;index&#x2F;index.html</p>
+<p>④修改模板文件</p>
+<p>保留页面独有的静态资源文件，以及主体部分代码</p>
+<p>修改模板文件中静态资源路径</p>
+<p><strong>注：如果页面显示效果不对，可以考虑先删除缓存 runtime目录</strong></p>
+<h2 id="3、后台登录页"><a href="#3、后台登录页" class="headerlink" title="3、后台登录页"></a>3、后台登录页</h2><p>①确定页面的访问路径（模块、控制器、方法）</p>
+<p>admin模块 login控制器  login方法</p>
+<p>②新建对应的控制器方法，在方法中调用模板</p>
+<p>注：后台的登录页面，不需要使用布局</p>
+<p>③将模板页面移动到对应的视图目录下</p>
+<p>将login.html 移动到 application&#x2F;admin&#x2F;view&#x2F;login&#x2F;目录下</p>
+<p>⑤修改模板文件中静态资源路径</p>
+<p>修改application&#x2F;admin&#x2F;view&#x2F;login&#x2F;login.html</p>
+<p>注：也可以使用_<em>STATIC</em>_ 代替静态资源路径中的&#x2F;static（手册–视图–输出替换）</p>
+<h2 id="4、其他页面"><a href="#4、其他页面" class="headerlink" title="4、其他页面"></a>4、其他页面</h2><p>重复步骤①②③⑤</p>
+<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1><p>整合以下模板</p>
+<p>商品列表	Goods控制器index方法  goods_list.html  -&gt;  index.html</p>
+<p>商品新增	Goods控制器create方法  goods_add.html  -&gt; create.html</p>
+<p>商品修改	Goods控制器edit方法    goods_edit.html   -&gt; edit.html</p>
+<p>管理员列表	Manager控制器index方法  manager_list.html   -&gt; index.html</p>
+<p>管理员新增	Manager控制器create方法  manager_add.html  -&gt; create.html</p>
+<p>管理员修改	Manager控制器edit方法    manager_edit.html  -&gt;edit.html</p>
+<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>1.安装部署框架，熟悉目录结构（application   public）</p>
+<p>2.控制器定义、控制器的访问（隐藏入口文件、Path_info格式url） 能够访问到指定的控制器方法</p>
+<p>3.命令行操作（创建模块，创建控制器类）（环境变量等）</p>
+<p>4.Request请求对象基本使用–接收参数（熟练使用一种写法）</p>
+<p>5.模板整合（模板布局）</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Li Weiming</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/04/21/thinkphp/">http://example.com/2023/04/21/thinkphp/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Hacker明</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://tse4-mm.cn.bing.net/th/id/OIP-C.tSd6WFEbOiFqaU3U51OjugAAAA?w=207&amp;h=207&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.1&amp;pid=1.7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/04/21/ssrf%E6%BC%8F%E6%B4%9E/" title="ssrf漏洞"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">ssrf漏洞</div></div></a></div><div class="next-post pull-right"><a href="/2023/04/20/PHP%20%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80-%E5%8F%98%E9%87%8F%E7%AF%87/" title="PHP开发基础-变量篇"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">PHP开发基础-变量篇</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.tSd6WFEbOiFqaU3U51OjugAAAA?w=207&amp;h=207&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.1&amp;pid=1.7" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Li Weiming</div><div class="author-info__description">人生就像一场游戏，你想玩得玩，不想玩也得玩</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcom to my Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E6%A1%86%E6%9E%B6"><span class="toc-number">1.</span> <span class="toc-text">1、什么是框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81php%E4%B8%AD%E7%9A%84%E4%B8%BB%E6%B5%81%E6%A1%86%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">2、php中的主流框架</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81ThinkPHP%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85"><span class="toc-number"></span> <span class="toc-text">二、ThinkPHP框架安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E4%B8%8B%E8%BD%BD%E5%B9%B6%E8%A7%A3%E5%8E%8B%E6%A1%86%E6%9E%B6"><span class="toc-number">1.</span> <span class="toc-text">1、下载并解压框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA"><span class="toc-number">2.</span> <span class="toc-text">2、配置虚拟主机</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81TP%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80"><span class="toc-number"></span> <span class="toc-text">三、TP框架基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">1、目录结构（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">2、配置文件（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E5%87%BD%E6%95%B0%E6%96%87%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">3、函数文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">4、开发规范（了解）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81TP%E6%A1%86%E6%9E%B6%E4%B8%AD%E7%9A%84%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number"></span> <span class="toc-text">四、TP框架中的控制器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%8E%A7%E5%88%B6%E5%99%A8%E7%9A%84%E5%90%8E%E7%BC%80"><span class="toc-number">1.</span> <span class="toc-text">1、控制器的后缀</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E6%8E%A7%E5%88%B6%E5%99%A8%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">2.</span> <span class="toc-text">2、控制器的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E6%A1%86%E6%9E%B6%E4%B8%AD%E7%9A%84%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="toc-number">3.</span> <span class="toc-text">3、框架中的命名空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81url%E8%AE%BF%E9%97%AE"><span class="toc-number">4.</span> <span class="toc-text">4、url访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81%E8%B0%83%E8%AF%95%E6%A8%A1%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">5、调试模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%9D%97"><span class="toc-number"></span> <span class="toc-text">五、创建模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E5%88%9B%E5%BB%BA%E5%89%8D%E5%8F%B0%E5%92%8C%E5%90%8E%E5%8F%B0%E6%A8%A1%E5%9D%97"><span class="toc-number">1.</span> <span class="toc-text">1、创建前台和后台模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E8%AE%BF%E9%97%AE%E6%A8%A1%E5%9D%97"><span class="toc-number">2.</span> <span class="toc-text">2、设置默认访问模块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%9D%97%E7%9B%AE%E5%BD%95%E5%8F%8A%E6%96%87%E4%BB%B6"><span class="toc-number"></span> <span class="toc-text">六、命令行创建模块目录及文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%9D%97%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">1、命令行创建模块目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%9B%E5%BB%BA%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">2、命令行创建控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">3、命令行创建模型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81Request%E8%AF%B7%E6%B1%82%E7%B1%BB"><span class="toc-number"></span> <span class="toc-text">七、Request请求类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E8%8E%B7%E5%8F%96%E8%BE%93%E5%85%A5%E5%8F%98%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text">1、获取输入变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A"><span class="toc-number">2.</span> <span class="toc-text">2、参数绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="toc-number">3.</span> <span class="toc-text">3、依赖注入</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB%E3%80%81ThinkPHP%E6%A1%86%E6%9E%B6%E4%B8%AD%E7%9A%84%E8%A7%86%E5%9B%BE"><span class="toc-number"></span> <span class="toc-text">八、ThinkPHP框架中的视图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E8%A7%86%E5%9B%BE%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">1.</span> <span class="toc-text">1、视图的组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">2.</span> <span class="toc-text">2、模板的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E6%A8%A1%E6%9D%BF%E6%B8%B2%E6%9F%93"><span class="toc-number">3.</span> <span class="toc-text">3、模板渲染</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E5%B0%86%E5%90%8E%E5%8F%B0%E6%A8%A1%E6%9D%BF%E4%B8%8E%E6%A1%86%E6%9E%B6%E5%81%9A%E7%BB%93%E5%90%88"><span class="toc-number"></span> <span class="toc-text">九、将后台模板与框架做结合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%A8%A1%E6%9D%BF%E5%B8%83%E5%B1%80"><span class="toc-number">1.</span> <span class="toc-text">1、模板布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%90%8E%E5%8F%B0%E9%A6%96%E9%A1%B5"><span class="toc-number">2.</span> <span class="toc-text">2、后台首页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E5%90%8E%E5%8F%B0%E7%99%BB%E5%BD%95%E9%A1%B5"><span class="toc-number">3.</span> <span class="toc-text">3、后台登录页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E5%85%B6%E4%BB%96%E9%A1%B5%E9%9D%A2"><span class="toc-number">4.</span> <span class="toc-text">4、其他页面</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A"><span class="toc-number"></span> <span class="toc-text">作业</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">总结：</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/26/php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/" title="php序列化漏洞">php序列化漏洞</a><time datetime="2023-04-25T16:00:00.000Z" title="发表于 2023-04-26 00:00:00">2023-04-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/23/15-PDO/" title="MYSQL数据库基础-PDO">MYSQL数据库基础-PDO</a><time datetime="2023-04-22T16:00:00.000Z" title="发表于 2023-04-23 00:00:00">2023-04-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/23/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/" title="MYSQL数据库基础">MYSQL数据库基础</a><time datetime="2023-04-22T16:00:00.000Z" title="发表于 2023-04-23 00:00:00">2023-04-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/23/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%803/" title="MYSQL数据库基础3">MYSQL数据库基础3</a><time datetime="2023-04-22T16:00:00.000Z" title="发表于 2023-04-23 00:00:00">2023-04-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/23/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%802/" title="MYSQL数据库基础2">MYSQL数据库基础2</a><time datetime="2023-04-22T16:00:00.000Z" title="发表于 2023-04-23 00:00:00">2023-04-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Li Weiming</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
