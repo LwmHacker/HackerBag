@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>文件上传漏洞 | Hacker明</title><meta name="author" content="Li Weiming"><meta name="copyright" content="Li Weiming"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="文件上传漏洞简介文件上传漏洞是指用户上传了一个可执行的脚本文件，并通过此脚本文件获取执行服务器端命令的能力。这种攻击方式是最为直接和有效的，“文件上传” 本身没有问题，有问题的是文件上传后，服务器怎么处理、解释文件。如果服务器的处理逻辑做的不够安全，则会导致严重的后果，产生文件上传漏洞。 原理大部分的网站和应用系统都有上传功能，一些文件上传功能实现代码没有严格限制用户上传的文件后缀以及文件类型，导">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件上传漏洞">
+<meta property="og:url" content="http://example.com/2023/04/24/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html">
+<meta property="og:site_name" content="Hacker明">
+<meta property="og:description" content="文件上传漏洞简介文件上传漏洞是指用户上传了一个可执行的脚本文件，并通过此脚本文件获取执行服务器端命令的能力。这种攻击方式是最为直接和有效的，“文件上传” 本身没有问题，有问题的是文件上传后，服务器怎么处理、解释文件。如果服务器的处理逻辑做的不够安全，则会导致严重的后果，产生文件上传漏洞。 原理大部分的网站和应用系统都有上传功能，一些文件上传功能实现代码没有严格限制用户上传的文件后缀以及文件类型，导">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tse4-mm.cn.bing.net/th/id/OIP-C.tSd6WFEbOiFqaU3U51OjugAAAA?w=207&h=207&c=7&r=0&o=5&dpr=1.1&pid=1.7">
+<meta property="article:published_time" content="2023-04-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-03T15:15:50.905Z">
+<meta property="article:author" content="Li Weiming">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tse4-mm.cn.bing.net/th/id/OIP-C.tSd6WFEbOiFqaU3U51OjugAAAA?w=207&h=207&c=7&r=0&o=5&dpr=1.1&pid=1.7"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/2023/04/24/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '文件上传漏洞',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-03 23:15:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/source/css/car.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hacker明" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.tSd6WFEbOiFqaU3U51OjugAAAA?w=207&amp;h=207&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.1&amp;pid=1.7" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Hacker明"><span class="site-name">Hacker明</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">文件上传漏洞</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-23T16:00:00.000Z" title="发表于 2023-04-24 00:00:00">2023-04-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-03T15:15:50.905Z" title="更新于 2023-05-03 23:15:50">2023-05-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="文件上传漏洞"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="文件上传漏洞简介"><a href="#文件上传漏洞简介" class="headerlink" title="文件上传漏洞简介"></a>文件上传漏洞简介</h1><p>文件上传漏洞是指用户上传了一个可执行的脚本文件，并通过此脚本文件获取执行服务器端命令的能力。这种攻击方式是最为直接和有效的，“文件上传” 本身没有问题，有问题的是文件上传后，服务器怎么处理、解释文件。如果服务器的处理逻辑做的不够安全，则会导致严重的后果，产生文件上传漏洞。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>大部分的网站和应用系统都有上传功能，一些文件上传功能实现代码没有严格限制用户上传的文件后缀以及文件类型，导致允许攻击者向某个可通过web访问的目录上传任意PHP文件，并能够将这些文件传递给PHP解释器，就可以在 进程服务器上执行任意PHP脚本</p>
+<h2 id="危害"><a href="#危害" class="headerlink" title="危害"></a>危害</h2><p>1、上传文件是web脚本语言，服务器的web容器解释并执行了用户上传的脚本，导致代码执行。</p>
+<p>2、上传文件是病毒或者木马时，主要用于诱骗用户或者管理员下载执行或者直接自动化运行。</p>
+<p>3、上传文件是Flash的策略文件 crossdomain.xml，黑客用以控制Flash在该域 下的行为(其他通过类似方式控制策略文件的情况类似)。</p>
+<p>4、上传文件是病毒、木马文件，黑客用以诱骗用户或者管理员下载执行。</p>
+<p>5、上传文件是钓鱼图片或为包含了脚本的图片，在某些版本的浏览器中会被作为脚本执行，被用于钓鱼和欺诈。 除此之外，还有一些不常见的利用方法，比如将上传文件作为一个入口，溢出服务器的后台处理程序，如图片解析模块，或者上传一个合法的文本文件，其内容包含了PHP脚本，再通过”本地文件包含漏洞(Local File Include)”执行此脚本。</p>
+<h2 id="满足条件"><a href="#满足条件" class="headerlink" title="满足条件"></a>满足条件</h2><p>能够被web容器解释执行</p>
+<p>能够从web访问这个文件</p>
+<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><p>一些web应用程序中允许上传图片，文本或者其他资源到指定的位置，文件上传漏洞就是利用这些可以上传的地方将恶意代码植入到服务器中，再通过 url 去 访问以执行代码。</p>
+<p>1、服务器配置不当</p>
+<p>2、开源编辑器上传漏洞</p>
+<p>3、本地文件上传限制被绕过</p>
+<p>4、过滤不严格被绕过</p>
+<p>5、文件解析漏洞导致文件执行</p>
+<p>6、文件路径截断</p>
+<h2 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h2><h3 id="1、客服端绕过"><a href="#1、客服端绕过" class="headerlink" title="1、客服端绕过"></a>1、客服端绕过</h3><p>一般都是在网页上写一段 javascript 脚本，校验上传文件的后缀名，有白名单形式也有黑名单形式。判断方式：在浏览加载文件，但还未点击上传按钮时便弹出对话框，内容如：只允许上传.jpg&#x2F;.jpeg&#x2F;.png后缀名的文件，而此时并没有发送数据包。</p>
+<p>绕过方法:</p>
+<p>1、通过火狐插件 NOscript 插件或者禁用 IE 中 JS 脚本；</p>
+<p>2、通过 firbug 插件元素审核修改代码（如删除 onsubmit&#x3D;”return checkFile()” 事件）；</p>
+<p>3、通过 firbug 元素审核 javascirpt 脚本中添加上传文件类型；</p>
+<p>4、通过利用 burp 抓包改包，先上传一个 gif 类型的木马，然后通过 burp 将其改为asp&#x2F;php&#x2F;jsp 后缀名即可 注意：这里修改文件名字后，请求头中的 Content-Length 的值也要改。</p>
+<h3 id="2、服务端绕过"><a href="#2、服务端绕过" class="headerlink" title="2、服务端绕过"></a>2、服务端绕过</h3><p>（1）黑名单扩展名绕过</p>
+<p>黑名单检测：</p>
+<p>一般有个专门的 blacklist 文件，里面会包含常见的危险脚本文件。绕过方法：</p>
+<p>（1）找黑名单扩展名的漏网之鱼 - 比如 iis6.0 中的 asa 和 cer （2）可能存在大小写绕过漏洞 - 比如 aSp(iis6.0 中可以）和 pHp（只能在 小于 php5.3.39 中的 linux 中）之中 （3）能被web容器解析的文件其他扩展名列表：</p>
+<p>jsp, jspx ,jspf*7                                                                                                                              </p>
+<p>asp asa cer cdx,htr,xml,html</p>
+<p>aspx,ashx,asmx,asax,ascx</p>
+<p>（2）黑名单特殊后缀名绕过（利用难度高）</p>
+<p>将Burpsuite截获的数据包中backlion.php名字改为 baclion.php4(php1,php2,php3,php4,php5), 前提条件是 http.conf 中设置 AddType application&#x2F;x-httpd-php .php1(php 的版本小于等于 5.3.29 以下)</p>
+<p>（3）单双重后缀名绕过</p>
+<p>上传时将 Burpsuite 截的数据包中文件名 backlion.php（backlion.asa)改 为 backlion.pphphph(backlion.asasaa)，那么过滤了第一个”php”字符串”后， 开头的’p’和结尾的’hp’就组合又形成了 php</p>
+<p>（4）服务端 MIME 文件类型(Content-Type)绕过</p>
+<p>MIME 的作用：</p>
+<p>使客户端软件，区分不同种类的数据，例如web浏览器就是通过 MIME 类 型来判断文件是GIF图片，还是可打印的 PostScript 文件。web服务器使用 MIME 来说明发送数据的种类，web客户端使用 MIME 来说明希望接收到的数据种类，它是服务器用来判断浏览器传递文件格式的重要标记项。</p>
+<p>常用的文件上传类型的 MIME 表： text&#x2F;plain（纯文本） text&#x2F;html（HTML 文档） text&#x2F;javascript（js 代码） application&#x2F;xhtml+xml（XHTML 文档） image&#x2F;gif（GIF 图像） image&#x2F;jpeg（JPEG 图像） image&#x2F;png（PNG 图像） video&#x2F;mpeg（MPEG 劢画） application&#x2F;octet-stream（二迚制数据） application&#x2F;pdf（PDF 文档） application&#x2F;(编程语言) 该种语言的代码 application&#x2F;msword（Microsoft Word 文件） message&#x2F;rfc822（RFC 822 形式） multipart&#x2F;alternative（HTML 邮件的 HTML 形式和纯文本形式，相同内容使 用不同形式表示） application&#x2F;x-www-form-urlencoded（POST 方法提交的表单）multipart&#x2F;form-data（POST 提交时伴随文件上传的表单）</p>
+<p>绕过方法：上传对文件类型做了限制，可通过 burpsuit 将其他类文件类型 修改为如：Content-Type：image&#x2F;gif 和 image&#x2F;jpeg 等运行的文件类型。</p>
+<h3 id="3-白名单绕过："><a href="#3-白名单绕过：" class="headerlink" title="3.白名单绕过："></a>3.白名单绕过：</h3><p>（1）配合web容器的解析漏洞：</p>
+<p>IIS中的目录解析漏洞和分号解析漏洞 ：</p>
+<p>将一句话木马的文件名后缀.php，改成.php.abc(不被解析的后缀名)。首先， 服务器验证文件扩展名的时候，验证的是.abc，只要该扩展名符合服务器端黑白名单规则，即可上传。</p>
+<p>nginx 空字节漏洞 xxx.jpg%00.php 这样的文件名会被解析为php代码运行。</p>
+<p>apache 的解析漏洞，上传如 a.php.rar a.php.gif 类型的文件名，可以避免 对于php文件的过滤机制，但是由于 apache 在解析文件名的时候是从右向左读，如果遇到不能识别的扩展名则跳过，rar 等扩展名是 apache 不能识别的， 因此就会直接将类型识别为 php，从而达到了注入php代码的目的。</p>
+<p>（2）%00 截断上传绕过</p>
+<p>通过抓包截断将.asp.jpg 后面的一个.换成%00 在上传的时候即.asp%00.jpg，当文件系统读到%00 时，会认为文件已经结束，从而将.asp.jpg 的内容写入到.asp 中，从而达到攻击的目的。%00 不是针对所有基于白名单的后缀名检查都能绕过，代码的实现过程中必须存在截断上传漏洞，上传格式如下：.asp%00.jpg</p>
+<h2 id="绕waf"><a href="#绕waf" class="headerlink" title="绕waf"></a>绕waf</h2><h3 id="1-上传文件-WAF-检查的位置"><a href="#1-上传文件-WAF-检查的位置" class="headerlink" title="1.上传文件 WAF 检查的位置"></a>1.上传文件 WAF 检查的位置</h3><p>文件名：解析文件名，判断是否在黑名单内。文件内容：解析文件内容，判断是否为 webshell 文件目录权限 请求的 url Boundary 边界 MIME 文件类型目前，市面上常见的是解析文件名，少数 WAF 是解析文件内容，比如长亭。</p>
+<h3 id="2-文件上传存在的上传特征"><a href="#2-文件上传存在的上传特征" class="headerlink" title="2.文件上传存在的上传特征"></a>2.文件上传存在的上传特征</h3><p>http 请求 Header 头部中的 Content-Type 存在以下特征：</p>
+<p>multipart&#x2F;form-data:表示该请求是一个文件上传请求存在boundary字符串 : 作用为分隔符，以区分 POST 数据 。POST 的内容存在以下特征： Content-Disposition name filename POST 中的 boundary 的值就是 Content-Type 的值在最前面加了两个–，除了 最后 标识结束的 boundary 最后标识结束的 boundary 最后默认会多出两个–（测试时，最后一行的 boundary 删掉也能成功上传）。</p>
+<h3 id="3-绕过-WAF-文件上传的方法"><a href="#3-绕过-WAF-文件上传的方法" class="headerlink" title="3.绕过 WAF 文件上传的方法"></a>3.绕过 WAF 文件上传的方法</h3><p>（1）填充垃圾数据绕过</p>
+<p>有些主机 WAF 软件为了不影响web服务器的性能，会对校验的用户数据设置大小上限，比如1M。此种情况可以构造一个大文件，前面 1M 的内容为垃圾内容，后面才是真正的木马内容，便可以绕过 WAF 对文件内容的校验；’ Content-Type 类型数据后添加垃圾数据：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Content-Type: image/jpeg</span><br><span class="line"></span><br><span class="line">a=11111111111111111111111111111111111111111111111111111111</span><br><span class="line"></span><br><span class="line">GIF89a</span><br><span class="line"></span><br><span class="line">&lt;?php phpinfo(); ?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>当然也可以将垃圾数据放在数据包最开头，这样便可以绕过对文件名的校验。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">------WebKitFormBoundaryYijPw9QB0WlswSL2</span><br><span class="line"></span><br><span class="line">a=111111111111111111111111111111111111111111111111111111111111111111111               </span><br><span class="line"></span><br><span class="line">Content-Disposition: form-data; name=&quot;file_x&quot;; filename=&quot;bk.jpg&quot;</span><br><span class="line"></span><br><span class="line">Content-Type: image/jpeg</span><br></pre></td></tr></table></figure>
+
+<p>（2）文件扩展名出回车绕过（只支持 php）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Content-Disposition: form-data; nAme=&quot;upfile&quot;; filename=&quot;bk.ph</span><br><span class="line"></span><br><span class="line">p&quot; Content-Type: image/jpeg</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Content-Disposition: form-data; nAme=&quot;upfile&quot;; file</span><br><span class="line"></span><br><span class="line">name=&quot;bk.php&quot;</span><br><span class="line"></span><br><span class="line">Content-Type: image/jpeg</span><br></pre></td></tr></table></figure>
+
+<p>又或者</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Content-Disposition: form-data; nAme=&quot;upfile&quot;; fi</span><br><span class="line"></span><br><span class="line">lename=&quot;bk.php&quot; Content-Type: image/jpeg</span><br></pre></td></tr></table></figure>
+
+<p>（3）filename 绕过</p>
+<p>添加一个 finame 参数：</p>
+<p>针对早期版本安全狗，可以多加一个 filename 在一个 Content-Disposition 中，存在多个 filename ，协议解析应该使用最 后的filename 值作为文件名。如果 WAF 解析到 filename&#x3D;”bk.jpg”认为解析 到文件名，结束解析，将导致被绕过。因为后端容器解析到的文件名是 bk.asp。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Content-Disposition: form-data; name=&quot;file1&quot;;</span><br><span class="line"></span><br><span class="line">filename=&quot;bk.jpg&quot;;filename=&quot;bk.asp&quot;</span><br></pre></td></tr></table></figure>
+
+<p>（4）修改 Content-Disposition 字段值的大小写绕过</p>
+<p>对这三个固定的字换:Content-Disposition,name,filename 比如 name 转换成 Name，Content-Disposition 转换成 content-disposition。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Disposition: form-data; name=&quot;upfile&quot;; filename=&quot;bk.php&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>改成</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Disposition: form-data; nAme=&quot;upfile&quot;; filename=&quot;bk.php&quot;</span><br></pre></td></tr></table></figure>
+
+<p>（5）文件重命名绕过</p>
+<p>如果 web 程序会将 filename 除了扩展名的那段重命名的话，那么还可以构造更多的点、符号等等。         Content-Disposition: form-data; name&#x3D;”  file1”;</p>
+<p>filename&#x3D;”bk……………………………………………………………………………………………………..</p>
+<p>………………………………………………………………………………………………asp”。</p>
+<p>（6）删除 Content-Disposition 值的 form-data 绕过</p>
+<p>有的 WAF 在解析的时候，认为 Content-Disposition 值一定是 form-data，造成绕过。两年前，拿它绕过安全狗的上传，不知道现在如何。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Disposition: form-data; name=&quot;file1&quot;; filename= &quot;bk.php&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>改为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Disposition: name=&quot;file1&quot;; filename= &quot;bk.php&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h2><p>1、在服务器后端对上传的文件进行过滤。</p>
+<p>2、白名单。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Li Weiming</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/04/24/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">http://example.com/2023/04/24/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Hacker明</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://tse4-mm.cn.bing.net/th/id/OIP-C.tSd6WFEbOiFqaU3U51OjugAAAA?w=207&amp;h=207&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.1&amp;pid=1.7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/04/24/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%20/" title="文件包含漏洞"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">文件包含漏洞</div></div></a></div><div class="next-post pull-right"><a href="/2023/04/23/15-PDO/" title="MYSQL数据库基础-PDO"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MYSQL数据库基础-PDO</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.tSd6WFEbOiFqaU3U51OjugAAAA?w=207&amp;h=207&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.1&amp;pid=1.7" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Li Weiming</div><div class="author-info__description">人生就像一场游戏，你想玩得玩，不想玩也得玩</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcom to my Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">文件上传漏洞简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B1%E5%AE%B3"><span class="toc-number">1.2.</span> <span class="toc-text">危害</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BB%A1%E8%B6%B3%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.3.</span> <span class="toc-text">满足条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A7%E7%94%9F%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.4.</span> <span class="toc-text">产生原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%95%E8%BF%87"><span class="toc-number">1.5.</span> <span class="toc-text">绕过</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AE%A2%E6%9C%8D%E7%AB%AF%E7%BB%95%E8%BF%87"><span class="toc-number">1.5.1.</span> <span class="toc-text">1、客服端绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BB%95%E8%BF%87"><span class="toc-number">1.5.2.</span> <span class="toc-text">2、服务端绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%99%BD%E5%90%8D%E5%8D%95%E7%BB%95%E8%BF%87%EF%BC%9A"><span class="toc-number">1.5.3.</span> <span class="toc-text">3.白名单绕过：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%95waf"><span class="toc-number">1.6.</span> <span class="toc-text">绕waf</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6-WAF-%E6%A3%80%E6%9F%A5%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.6.1.</span> <span class="toc-text">1.上传文件 WAF 检查的位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%AD%98%E5%9C%A8%E7%9A%84%E4%B8%8A%E4%BC%A0%E7%89%B9%E5%BE%81"><span class="toc-number">1.6.2.</span> <span class="toc-text">2.文件上传存在的上传特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%BB%95%E8%BF%87-WAF-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.6.3.</span> <span class="toc-text">3.绕过 WAF 文件上传的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1"><span class="toc-number">1.7.</span> <span class="toc-text">防御</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/26/php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/" title="php序列化漏洞">php序列化漏洞</a><time datetime="2023-04-25T16:00:00.000Z" title="发表于 2023-04-26 00:00:00">2023-04-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/24/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%20/" title="文件包含漏洞">文件包含漏洞</a><time datetime="2023-04-23T16:00:00.000Z" title="发表于 2023-04-24 00:00:00">2023-04-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/24/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" title="文件上传漏洞">文件上传漏洞</a><time datetime="2023-04-23T16:00:00.000Z" title="发表于 2023-04-24 00:00:00">2023-04-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/23/15-PDO/" title="MYSQL数据库基础-PDO">MYSQL数据库基础-PDO</a><time datetime="2023-04-22T16:00:00.000Z" title="发表于 2023-04-23 00:00:00">2023-04-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/23/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/" title="MYSQL数据库基础">MYSQL数据库基础</a><time datetime="2023-04-22T16:00:00.000Z" title="发表于 2023-04-23 00:00:00">2023-04-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Li Weiming</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

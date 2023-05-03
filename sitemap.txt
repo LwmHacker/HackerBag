@@ -1,3 +1,5 @@
+http://example.com/2023/04/24/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/
+http://example.com/2023/04/24/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%20/
 http://example.com/2023/04/23/15-PDO/
 http://example.com/2023/04/23/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%804/
 http://example.com/2023/04/23/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%803/
